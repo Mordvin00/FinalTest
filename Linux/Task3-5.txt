@@ -1,0 +1,113 @@
+PS D:\Users\Lenovo\Documents\GB\FinalTest> ssh -p 8022 mordvin@localhost
+mordvin@localhost's password:
+Welcome to Ubuntu 22.04.4 LTS (GNU/Linux 6.8.0-40-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+Расширенное поддержание безопасности (ESM) для Applications выключено.
+
+0 обновлений может быть применено немедленно.
+
+2 дополнительных обновления безопасности могут быть применены с помощью ESM Apps.
+Подробнее о включении службы ESM Apps at https://ubuntu.com/esm
+
+Last login: Sat Sep  7 16:22:12 2024 from 10.0.2.2
+mordvin@LenovoLinux:~$ sudo su
+[sudo] пароль для mordvin:
+root@LenovoLinux:/home/mordvin# wget https://dev.mysql.com/get/mysql-apt-config_0.8.23-1_all.deb
+--2024-09-07 19:22:08--  https://dev.mysql.com/get/mysql-apt-config_0.8.23-1_all.deb
+Распознаётся dev.mysql.com (dev.mysql.com)… 88.221.98.102, 2a02:26f0:e80:381::2e31, 2a02:26f0:e80:388::2e31
+Подключение к dev.mysql.com (dev.mysql.com)|88.221.98.102|:443... соединение установлено.
+HTTP-запрос отправлен. Ожидание ответа… 302 Moved Temporarily
+Адрес: https://repo.mysql.com//mysql-apt-config_0.8.23-1_all.deb [переход]
+--2024-09-07 19:22:08--  https://repo.mysql.com//mysql-apt-config_0.8.23-1_all.deb
+Распознаётся repo.mysql.com (repo.mysql.com)… 23.205.187.50, 2a02:26f0:e80:39e::1d68, 2a02:26f0:e80:384::1d68
+Подключение к repo.mysql.com (repo.mysql.com)|23.205.187.50|:443... соединение установлено.
+HTTP-запрос отправлен. Ожидание ответа… 200 OK
+Длина: 18028 (18K) [application/x-debian-package]
+Сохранение в: ‘mysql-apt-config_0.8.23-1_all.deb’
+
+mysql-apt-config_0.8.23-1_all 100%[=================================================>]  17,61K  --.-KB/s    за 0,005s
+
+2024-09-07 19:22:09 (3,67 MB/s) - ‘mysql-apt-config_0.8.23-1_all.deb’ сохранён [18028/18028]
+
+root@LenovoLinux:/home/mordvin# dpkg -i mysql-apt-config_0.8.23-1_all.deb
+Выбор ранее не выбранного пакета mysql-apt-config.
+(Чтение базы данных … на данный момент установлено 198809 файлов и каталогов.)
+Подготовка к распаковке mysql-apt-config_0.8.23-1_all.deb …
+Распаковывается mysql-apt-config (0.8.23-1) …
+Настраивается пакет mysql-apt-config (0.8.23-1) …
+Warning: apt-key should not be used in scripts (called from postinst maintainerscript of the package mysql-apt-config)
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+OK
+root@LenovoLinux:/home/mordvin# apt update
+Сущ:1 http://ru.archive.ubuntu.com/ubuntu jammy InRelease
+Пол:2 http://ru.archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+Пол:3 http://repo.mysql.com/apt/ubuntu jammy InRelease [25,1 kB]
+Сущ:4 http://ru.archive.ubuntu.com/ubuntu jammy-backports InRelease
+Пол:5 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+Пол:6 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main i386 Packages [690 kB]
+Пол:7 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [1 988 kB]
+Ошб:3 http://repo.mysql.com/apt/ubuntu jammy InRelease
+  Следующие подписи не могут быть проверены, так как недоступен открытый ключ: NO_PUBKEY B7B3B788A8D3785C
+Чтение списков пакетов… Готово
+W: Ошибка GPG: http://repo.mysql.com/apt/ubuntu jammy InRelease: Следующие подписи не могут быть проверены, так как недоступен открытый ключ: NO_PUBKEY B7B3B788A8D3785C
+E: Репозиторий «http://repo.mysql.com/apt/ubuntu jammy InRelease» не подписан.
+N: Обновление из этого репозитория нельзя выполнить безопасным способом, поэтому по умолчанию он отключён.
+N: Информацию о создании репозитория и настройках пользователя смотрите в справочной странице apt-secure(8).
+root@LenovoLinux:/home/mordvin# apt install mysql-server
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово
+Следующие НОВЫЕ пакеты будут установлены:
+  mysql-server
+Обновлено 0 пакетов, установлено 1 новых пакетов, для удаления отмечено 0 пакетов, и 9 пакетов не обновлено.
+Необходимо скачать 9 468 B архивов.
+После данной операции объём занятого дискового пространства возрастёт на 35,8 kB.
+Пол:1 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 mysql-server all 8.0.39-0ubuntu0.22.04.1 [9 468 B]
+Получено 9 468 B за 1с (7 342 B/s)
+Выбор ранее не выбранного пакета mysql-server.
+(Чтение базы данных … на данный момент установлено 198814 файлов и каталогов.)
+Подготовка к распаковке …/mysql-server_8.0.39-0ubuntu0.22.04.1_all.deb …
+Распаковывается mysql-server (8.0.39-0ubuntu0.22.04.1) …
+Настраивается пакет mysql-server (8.0.39-0ubuntu0.22.04.1) …
+root@LenovoLinux:/home/mordvin# wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-ce-cli_20.10.13~3-0~ubuntu-jammy_amd64.deb
+--2024-09-07 19:34:39--  https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-ce-cli_20.10.13~3-0~ubuntu-jammy_amd64.deb
+Распознаётся download.docker.com (download.docker.com)… 3.164.240.119, 3.164.240.105, 3.164.240.73, ...
+Подключение к download.docker.com (download.docker.com)|3.164.240.119|:443... соединение установлено.
+HTTP-запрос отправлен. Ожидание ответа… 200 OK
+Длина: 40955778 (39M) [binary/octet-stream]
+Сохранение в: ‘docker-ce-cli_20.10.13~3-0~ubuntu-jammy_amd64.deb’
+
+docker-ce-cli_20.10.13~3-0~ub 100%[=================================================>]  39,06M  11,9MB/s    за 3,6s
+
+2024-09-07 19:34:42 (11,0 MB/s) - ‘docker-ce-cli_20.10.13~3-0~ubuntu-jammy_amd64.deb’ сохранён [40955778/40955778]
+
+root@LenovoLinux:/home/mordvin# dpkg -i docker-ce-cli_20.10.13~3-0~ubuntu-jammy_amd64.deb
+Выбор ранее не выбранного пакета docker-ce-cli.
+dpkg: относительно docker-ce-cli_20.10.13~3-0~ubuntu-jammy_amd64.deb, содержащего docker-ce-cli:
+ docker-ce-cli конфликтует с docker.io
+  docker.io (версия 24.0.7-0ubuntu2~22.04.1) существует и установлен.
+
+dpkg: ошибка при обработке архива docker-ce-cli_20.10.13~3-0~ubuntu-jammy_amd64.deb (--install):
+ конфликт пакетов — docker-ce-cli не будет установлен
+При обработке следующих пакетов произошли ошибки:
+ docker-ce-cli_20.10.13~3-0~ubuntu-jammy_amd64.deb
+root@LenovoLinux:/home/mordvin# dpkg -r docker-ce-cli
+dpkg: предупреждение: игнорируется запрос на удаление неустановленного пакета docker-ce-cli
+root@LenovoLinux:/home/mordvin# dpkg -r docker.io
+(Чтение базы данных … на данный момент установлено 198816 файлов и каталогов.)
+Удаляется docker.io (24.0.7-0ubuntu2~22.04.1) …
+'/usr/share/docker.io/contrib/nuke-graph-directory.sh' -> '/var/lib/docker/nuke-graph-directory.sh'
+Warning: Stopping docker.service, but it can still be activated by:
+  docker.socket
+Обрабатываются триггеры для man-db (2.10.2-1) …
+root@LenovoLinux:/home/mordvin# exit
+exit
+mordvin@LenovoLinux:~$ exit
+выход
+Connection to localhost closed.
+PS D:\Users\Lenovo\Documents\GB\FinalTest> git add .\Linux\Task3-5.txt
+PS D:\Users\Lenovo\Documents\GB\FinalTest> git commit -a -m "add Task3-5 for Linux"
