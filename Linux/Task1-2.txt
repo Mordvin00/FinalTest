@@ -71,7 +71,7 @@ root@LenovoLinux:/home/mordvin/Documents# cd final_test/
 root@LenovoLinux:/home/mordvin/Documents/final_test# cat > Pets.txt
 Dog
 Cat
-HamsterCombat!)))
+HamsterKombat!)))
 root@LenovoLinux:/home/mordvin/Documents/final_test# cat > PackAnimals.txt
 Horse
 Camel
@@ -80,7 +80,7 @@ root@LenovoLinux:/home/mordvin/Documents/final_test# cat Pets.txt PackAnimals.tx
 root@LenovoLinux:/home/mordvin/Documents/final_test# cat Animals.txt
 Dog
 Cat
-HamsterСCombat!)))
+HamsterKombat!)))
 Horse
 Camel
 Donkey
@@ -97,3 +97,24 @@ root@LenovoLinux:/home/mordvin/Documents/final_test# cd task2/
 root@LenovoLinux:/home/mordvin/Documents/final_test/task2# ls
 HumanFriends.txt
 root@LenovoLinux:/home/mordvin/Documents/final_test/task2#
+exit
+mordvin@LenovoLinux:~$ exit
+выход
+Connection to localhost closed.
+PS C:\Windows\system32> D:
+PS D:\> cd d:\Users\Lenovo\Documents\GB\FinalTest\
+PS D:\Users\Lenovo\Documents\GB\FinalTest> git init
+Initialized empty Git repository in D:/Users/Lenovo/Documents/GB/FinalTest/.git/
+PS D:\Users\Lenovo\Documents\GB\FinalTest> git branch -m master main
+PS D:\Users\Lenovo\Documents\GB\FinalTest> git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Linux/
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\Users\Lenovo\Documents\GB\FinalTest> git add .\Linux\
+PS D:\Users\Lenovo\Documents\GB\FinalTest> git commit -a -m "add Task1-2 for Linux"
